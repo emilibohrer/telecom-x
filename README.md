@@ -43,13 +43,6 @@ Este projeto tem como objetivo analisar a evasão de clientes (churn) na empresa
 - matplotlib
 - seaborn
 
-## Possíveis Problemas e Soluções
-
-- **Erro ao baixar dados:** Verifique se o link do dataset está ativo e se há conexão com a internet.
-- **Problemas de encoding:** Abra o CSV com encoding UTF-8.
-- **Pacotes não encontrados:** Certifique-se de instalar todas as dependências com `pip install`.
-- **Gráficos não aparecem:** Execute o notebook em ambiente que suporte visualização gráfica (Jupyter ou VS Code com extensão Python).
-
 ## Dicionário de Dados
 
 Consulte [`TelecomX_dicionario.md`](TelecomX_dicionario.md) para detalhes sobre cada coluna do dataset.
