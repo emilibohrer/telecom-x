@@ -8,40 +8,54 @@ Este projeto tem como objetivo analisar a evasão de clientes (churn) na empresa
 - `TelecomX_Dados.csv`: Base de dados processada.
 - `TelecomX_Dados_Limpos.csv`: Base de dados transformados e limpos.
 - `TelecomX_dicionario.md`: Dicionário de dados com explicação de cada coluna.
-- `README.md`: Este arquivo.
+- `img/`: Pasta com gráficos e visualizações gerados durante a análise.
 
-## Instalação
 
-1. **Clone o repositório:**
-   ```sh
-   git clone <url-do-repositorio>
-   cd telecom-x
-   ```
+## Limpeza e Tratamento de Dados
+- **Padronização**:
+Colunas renomeadas para letras minúsculas e traduzidas para o português para facilitar a análise.
+- **Valores Categóricos**:
+Tradução de categorias como contrato, método de pagamento, serviço de internet e gênero para o idioma local.
+- **Dados Duplicados e Nulos**:
+Remoção de registros duplicados e incompletos. A coluna cobranca_total foi convertida para tipo numérico com tratamento de erros.
+- **Variáveis Binárias**:
+Normalização de colunas binárias (churn, tem_conjuge, etc.) com conversão para valores numéricos: 1 = “sim”, 0 = “não”.
 
-2. **Crie um ambiente virtual (opcional, recomendado):**
-   ```sh
-   python -m venv venv
-   source venv/bin/activate  # Linux/Mac
-   venv\Scripts\activate     # Windows
-   ```
 
-3. **Instale as dependências:**
-   ```sh
-   pip install pandas matplotlib seaborn
-   ```
+## Análise Exploratória (EDA)
+
+- Contrato mensal e fibra óptica estão ligados a maiores taxas de evasão.
+- Clientes idosos, sem cônjuge ou sem dependentes apresentam maior propensão ao churn.
+- Cheque eletrônico como método de pagamento está associado a maior churn; transferência automática indica menor risco.
+- Menor tempo de contrato e baixa cobrança total correlacionam-se com maior evasão.
+- Gênero não mostrou influência significativa no churn
+
+<p align="center">
+    <img src="img/plotpizza_genero.png" alt="Genero x Churn" width="40%" />
+    <img src="img/plotpizza_contrato.png" alt="Tempo Contrato x Churn" width="40%" />
+</p>
+<p align="center">
+    <img src="img/plotpizza_dependentes.png" alt="Genero x Churn" width="40%" />
+    <img src="img/plotpizza_idoso.png" alt="Tempo Contrato x Churn" width="40%" />
+</p>
+<p align="center">
+    <img src="img/plotpizza_tem_conjuge.png" alt="Genero x Churn" width="40%" />
+    <img src="img/plotpizza_servico_internet.png" alt="Tempo Contrato x Churn" width="40%" />
+</p>
+<p align="center">
+    <img src="img/boxplot_churn.png" alt="Cobrança Total x Churn" width="40%" />
+</p>
 
 ## Como Executar
 
-1. Abra o arquivo [`TelecomX_BR.ipynb`](TelecomX_BR.ipynb) no Jupyter Notebook ou no Visual Studio Code.
-2. Execute as células sequencialmente para realizar a extração, transformação, análise e visualizar os gráficos.
-3. O arquivo [`TelecomX_Dados.csv`](TelecomX_Dados.csv) será gerado automaticamente durante o processo, assim como o arquivo [`TelecomX_Dados_Limpos.csv`](TelecomX_Dados_Limpos.csv)
+1. Instale as dependências
+   ```sh
+   pip install pandas matplotlib seaborn
+   ```
+2. Abra o arquivo [`TelecomX_BR.ipynb`](TelecomX_BR.ipynb) no Jupyter Notebook ou no Visual Studio Code.
+3. Execute as células sequencialmente para realizar a extração, transformação, análise e visualizar os gráficos.
+4. O arquivo [`TelecomX_Dados.csv`](TelecomX_Dados.csv) será gerado automaticamente durante o processo, assim como o arquivo [`TelecomX_Dados_Limpos.csv`](TelecomX_Dados_Limpos.csv)
 
-## Dependências
-
-- Python 3.7+
-- pandas
-- matplotlib
-- seaborn
 
 ## Dicionário de Dados
 
